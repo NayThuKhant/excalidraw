@@ -15,8 +15,12 @@ Please add the latest change on the top under the correct section.
 
 ### Features
 
+- Support for multiplayer undo / redo [#7348](https://github.com/excalidraw/excalidraw/pull/7348).
+
 - Add `useHandleLibrary`'s `opts.adapter` as the new recommended pattern to handle library initialization and persistence on library updates. [#7655](https://github.com/excalidraw/excalidraw/pull/7655)
+
 - Add `useHandleLibrary`'s `opts.migrationAdapter` adapter to handle library migration during init, when migrating from one data store to another (e.g. from LocalStorage to IndexedDB). [#7655](https://github.com/excalidraw/excalidraw/pull/7655)
+
 - Soft-deprecate `useHandleLibrary`'s `opts.getInitialLibraryItems` in favor of `opts.adapter`. [#7655](https://github.com/excalidraw/excalidraw/pull/7655)
 
 - Add `onPointerUp` prop [#7638](https://github.com/excalidraw/excalidraw/pull/7638).
@@ -26,6 +30,10 @@ Please add the latest change on the top under the correct section.
 ### Fixes
 
 - Keep customData when converting to ExcalidrawElement. [#7656](https://github.com/excalidraw/excalidraw/pull/7656)
+
+### Breaking Changes
+
+- Renamed required `updatedScene` parameter from `commitToHistory` into `commitToStore` [#7348](https://github.com/excalidraw/excalidraw/pull/7348).
 
 ### Breaking Changes
 
@@ -90,8 +98,6 @@ define: {
 ### Fixes
 
 - Disable caching bounds for arrow labels [#7343](https://github.com/excalidraw/excalidraw/pull/7343)
-
----
 
 ## 0.17.0 (2023-11-14)
 

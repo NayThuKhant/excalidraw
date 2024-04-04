@@ -11,6 +11,7 @@ import {
   ExcalidrawIframeLikeElement,
   IframeData,
 } from "./types";
+import { StoreAction } from "../actions/types";
 
 const embeddedLinkCache = new Map<string, IframeData>();
 
@@ -271,7 +272,7 @@ export const actionSetEmbeddableAsActiveTool = register({
           type: "embeddable",
         }),
       },
-      commitToHistory: false,
+      storeAction: StoreAction.NONE,
     };
   },
 });
