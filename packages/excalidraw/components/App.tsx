@@ -3724,6 +3724,7 @@ class App extends React.Component<AppProps, AppState> {
           nextCommittedElements = arrayToMap(prevElements);
         }
 
+        // WARN: Performs deep clone of changed elements, for ephemeral remote updates (i.e. remote dragging, resizing, drawing) we might consider doing something smarter
         this.store.capture(nextCommittedElements, nextCommittedAppState);
       }
 
@@ -4873,6 +4874,7 @@ class App extends React.Component<AppProps, AppState> {
         getSelectedGroupIdForElement(hitElement, this.state.selectedGroupIds);
 
       if (selectedGroupId) {
+        this.store.shouldCaptureIncrement();
         this.setState((prevState) => ({
           ...prevState,
           ...selectGroupsForSelectedElements(
